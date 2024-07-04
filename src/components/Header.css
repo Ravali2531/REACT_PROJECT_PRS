@@ -1,0 +1,44 @@
+.header {
+    background-color:rgb(228, 249, 249); /* Background color of the header */
+  padding: 20px 0; /* Spacing inside the header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:black; /* Text color */
+  font-family: 'Poppins', sans-serif;
+  font-size: larger;
+  font-weight: 400;
+  }
+  
+  .header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .header nav ul li {
+    display: inline;
+    margin: 20pt;
+  }
+  
+  .header nav ul li a {
+    box-shadow: inset 0 0 0 0 #54b3d6;
+    text-decoration: none;
+    color: black;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  }
+  
+  .header nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+ 
+
+  .logo img {
+    width: 20px; /* Adjust the width of your logo image */
+    height: 10px;
+  } 
+  
