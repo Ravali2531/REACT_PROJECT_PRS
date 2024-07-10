@@ -1,0 +1,76 @@
+.favbook-container {
+    padding: 1rem 6rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  @media (min-width: 768px) {
+    .favbook-container {
+      flex-direction: row;
+    }
+  }
+  
+  .favbook-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .favbook-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .favbook-img {
+    border-radius: 0.5rem; /* rounded */
+    width: 90%; 
+    /* 83.33%; md:w-10/12 */
+    margin-left: 0px;
+  }
+  
+  .favbook-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .favbook-title {
+    font-size: 3rem; /* text-5xl */
+    font-weight: bold;
+    margin-top: 1.25rem; /* my-5 */
+    line-height: 1.2;
+  }
+  
+  .highlight {
+    color: #1D4ED8; /* text-blue-700 */
+  }
+  
+  .favbook-description {
+    font-size: 1.125rem; /* text-lg */
+  }
+  
+  .explore-link {
+    margin-top: 0.5rem; /* mt-12 */
+    display: block;
+  }
+  
+  .explore-button {
+    background-color: #1D4ED8; /* bg-blue-700 */
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem; /* px-5, py-2 */
+    border-radius: 0.25rem; /* rounded */
+    transition: background-color 0.3s ease-in;
+    cursor: pointer;
+  }
+  
+  .explore-button:hover {
+    background-color: black;
+  }
+  
