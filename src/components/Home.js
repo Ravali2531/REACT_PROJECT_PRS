@@ -1,14 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Home.css';
-import BannerCard from './BannerCard';
-import FavBook from './FavBook';
 import Header from './Header';
 import MyFooter from './Footer';
 import { Footer } from 'flowbite-react';
 const Home = () => {
   return (
-    <div>      
+    <div>
       <Header />
         <ul>
             <li><Link to="/login">Login</Link></li>
@@ -37,7 +34,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <FavBook />        
+        <FavBook /> 
       <MyFooter />
     </div>
   )
