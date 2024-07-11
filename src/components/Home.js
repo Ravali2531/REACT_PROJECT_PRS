@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import MyFooter from './Footer';
+import BannerCard from './BannerCard';
+import FavBook from './FavBook';
+import Shop from './shop';
 import { Footer } from 'flowbite-react';
 const Home = () => {
   return (
@@ -9,8 +12,10 @@ const Home = () => {
       <Header />
         <ul>
             <li><Link to="/login">Login</Link></li>
-            <li><Link to="/upload-book">Upload Book</Link></li>            
-            <li><Link to="/manage-books">Manage Books</Link></li>
+            <li><Link to="/uploadbook">Upload Book</Link></li>            
+            <li><Link to="/managebooks">Manage Books</Link></li>
+            <li><Link to="/shop">Shop</Link></li>
+            
         </ul>
         <div className='banner-container'>
           <div className='banner-content'>
