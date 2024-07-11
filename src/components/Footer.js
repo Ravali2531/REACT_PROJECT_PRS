@@ -31,7 +31,7 @@ const MyFooter = () => {
             <Footer.LinkGroup col>
               <Footer.Link href="#">Privacy Policy</Footer.Link>
               <Footer.Link href="#">Licensing</Footer.Link>
-              <Footer.Link href="#">Terms &amp; Conditions</Footer.Link>
+              <Footer.Link href="#">Terms & Conditions</Footer.Link>
             </Footer.LinkGroup>
           </div>
           <div>
@@ -45,8 +45,8 @@ const MyFooter = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <Footer.Copyright href="#" by="Flowbite™" year={2022} />
-          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+        {<Footer.Copyright href="#" by="Flowbite™" year={2022} /> }
+          <div className="social-icons">
             <Footer.Icon href="#" icon={BsFacebook} />
             <Footer.Icon href="#" icon={BsInstagram} />
             <Footer.Icon href="#" icon={BsTwitter} />
