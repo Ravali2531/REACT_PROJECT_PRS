@@ -1,33 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import '../css/Cart.css';
+import { CartContext } from './CartContext';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Cart = () => {
-  const location = useLocation();
-  const [cart, setCart] = useState(location.state ? location.state.cart : []);
-
-  useEffect(() => {
-    console.log("CartPage cart:", cart);
-  }, [cart]);
+  const { cart, setCart } = useContext(CartContext);
 
   const updateQuantity = (bookId, quantity) => {
-    setCart((prevCart) => 
-      prevCart.map(item => 
-        item.id === bookId ? { ...item, quantity } : item
+    setCart((prevCart) =>
+      prevCart.map(item =>
+        item.id === bookId ? { ...item, quantity: Math.max(quantity, 1) } : item
       )
     );
   };
 
   const removeFromCart = (bookId) => {
-    setCart((prevCart) => 
+    setCart((prevCart) =>
       prevCart.filter(item => item.id !== bookId)
     );
   };
 
   return (
-    <div className="cart-page">
-      <h2 className='text-5xl font-bold text-center'>Your Cart</h2>
-      <Link to="/all-books" className='text-center block mt-4 text-blue-700'>
+    <div className="container mt-5">
+      <h2 className='text-center mb-4'>Your Cart</h2>
+      <Link to="/all-books" className='d-block text-center mb-4 text-primary'>
         Back to Books
       </Link>
       {cart.length === 0 ? (
@@ -35,18 +32,18 @@ const Cart = () => {
       ) : (
         <div className="cart-items">
           {cart.map((book) => (
-            <div key={book.id} className="cart-item">
-              <img src={book.imageurl} alt={book.booktitle} className="cart-item-image" />
-              <div className="cart-item-details">
+            <div key={book.id} className="cart-item d-flex align-items-center mb-3">
+              <img src={book.imageurl} alt={book.booktitle} className="cart-item-image img-fluid me-3" />
+              <div className="cart-item-details flex-grow-1">
                 <h3>{book.booktitle}</h3>
                 <p>{book.bookdescription}</p>
                 <p>$10.00</p>
-                <div className="quantity-controls">
-                  <button onClick={() => updateQuantity(book.id, book.quantity - 1)} disabled={book.quantity <= 1}>-</button>
+                <div className="d-flex align-items-center">
+                  <button className="btn btn-outline-secondary me-2" onClick={() => updateQuantity(book.id, book.quantity - 1)} disabled={book.quantity <= 1}>-</button>
                   <span>{book.quantity}</span>
-                  <button onClick={() => updateQuantity(book.id, book.quantity + 1)}>+</button>
+                  <button className="btn btn-outline-secondary ms-2" onClick={() => updateQuantity(book.id, book.quantity + 1)}>+</button>
                 </div>
-                <button onClick={() => removeFromCart(book.id)}>Remove</button>
+                <button className="btn btn-danger mt-2" onClick={() => removeFromCart(book.id)}>Remove</button>
               </div>
             </div>
           ))}
