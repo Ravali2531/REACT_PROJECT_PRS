@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Card } from "flowbite-react";
 import { database } from '../firebase';
 import { ref, get } from 'firebase/database';
-import '../css/AllBooks.css';
 import cartIcon from '../assets/cart-icon.png'; 
 
 const AllBooks = () => {
