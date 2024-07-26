@@ -1,7 +1,7 @@
 import React from 'react';
 import FavBookImg from "../assets/favoritebook.jpg";
 import { Link } from 'react-router-dom';
-import './FavBook.css';
+import '../css/FavBook.css';
 
 const FavBook = () => {
   return (

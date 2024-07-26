@@ -7,6 +7,7 @@ import ManageBooks from './components/ManageBooks';
 import EditBooks from './components/EditBook';
 import AllBooks from './components/AllBooks';
 import Register from './components/Register';
+import Cart from './components/Cart';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register/>} />          
           <Route path="/all-books" element={<AllBooks />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>
     </Router>

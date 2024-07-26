@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '../firebase';
-import './LoginRegister.css';
+import '../css/LoginRegister.css';
 
 const googleProvider = new GoogleAuthProvider();
 

@@ -1,0 +1,61 @@
+.books-grid {
+  display: grid;
+  gap: 2rem; /* gap-8 */
+  margin: 3rem 0; /* my-12 */
+  grid-template-columns: repeat(1, minmax(0, 1fr)); /* grid-cols-1 */
+
+  /* Responsive grid settings */
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* sm:grid-cols-2 */
+  }
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* md:grid-cols-3 */
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* lg:grid-cols-4 */
+  }
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Added to position the cart icon */
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.book-image {
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* Ensure all book images are the same height */
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.cart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px; /* Adjust width as needed */
+  height: 32px; /* Adjust height as needed */
+  cursor: pointer;
+  background: white; /* Adding a white background to make it stand out */
+  padding: 4px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-button {
+  background-color: #1D4ED8; /* bg-blue-700 */
+  font-weight: 600; /* font-semibold */
+  color: white; /* text-white */
+  padding: 0.5rem 1rem; /* py-2 px-4 */
+  border-radius: 0.25rem; /* rounded */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.add-button:hover {
+  background-color: black; /* hover:bg-black */
+}
