@@ -3,7 +3,7 @@ import { Label, Select, TextInput, Textarea } from "flowbite-react";
 import { database } from '../firebase';
 import { doc, setDoc } from "firebase/firestore";
 import {ref, onValue, update, push, remove} from 'firebase/database';
-import './UploadBook.css';
+import '../css/UploadBook.css';
 
 const UploadBook = () => {
   const bookCategories = [
