@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import cartIcon from '../assets/cart-icon.png';
 import { CartContext } from './CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import '../css/AllBooks.css';
 const AllBooks = () => {
   const [books, setBooks] = useState([]);
   const { cart, setCart } = useContext(CartContext);

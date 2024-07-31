@@ -21,6 +21,9 @@ const Cart = () => {
     );
   };
 
+  // Calculate total price based on the base price of 10 per book and quantity
+  const totalPrice = cart.reduce((acc, book) => acc + book.quantity * 10, 0);
+
   return (
     <div className="container mt-5">
       <h2 className='text-center mb-4'>Your Cart</h2>
@@ -37,7 +40,7 @@ const Cart = () => {
               <div className="cart-item-details flex-grow-1">
                 <h3>{book.booktitle}</h3>
                 <p>{book.bookdescription}</p>
-                <p>$10.00</p>
+                <p>${(book.quantity * 10).toFixed(2)}</p>
                 <div className="d-flex align-items-center">
                   <button className="btn btn-outline-secondary me-2" onClick={() => updateQuantity(book.id, book.quantity - 1)} disabled={book.quantity <= 1}>-</button>
                   <span>{book.quantity}</span>
@@ -47,6 +50,9 @@ const Cart = () => {
               </div>
             </div>
           ))}
+          <div className="cart-total mt-4 text-center">
+            <h3>Total Price: ${totalPrice.toFixed(2)}</h3>
+          </div>
         </div>
       )}
     </div>
