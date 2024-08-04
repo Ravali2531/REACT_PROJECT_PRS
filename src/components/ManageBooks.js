@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { database } from '../firebase';
 import { ref, onValue, remove } from 'firebase/database';
-import './ManageBooks.css';
+import '../css/ManageBooks.css';
 
 const ManageBooks = () => {
   const [allBooks, setAllBooks] = useState([]);

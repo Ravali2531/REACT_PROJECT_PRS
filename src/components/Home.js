@@ -3,10 +3,8 @@ import { Link } from 'react-router-dom';
 import Header from './Header';
 import MyFooter from './Footer';
 import BannerCard from './BannerCard';
-import FavBook from './FavBook';
 import Shop from './shop';
 import { Footer } from 'flowbite-react';
-import BannerCard from './BannerCard';
 import FavBook from './FavBook';
 import SearchBar from './SearchBar';
 const Home = () => {
