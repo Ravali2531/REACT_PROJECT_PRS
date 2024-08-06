@@ -16,7 +16,7 @@ const Login = () => {
         e.preventDefault();
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
-            navigate("/", { state: { email: userCredential.user.email } });
+            navigate("/home", { state: { email: userCredential.user.email } });
         } catch (error) {
             setError(error.message);
         }
@@ -38,7 +38,7 @@ const Login = () => {
     const handleGoogleSignIn = async () => {
         try {
             const result = await signInWithPopup(auth, googleProvider);
-            navigate("/", { state: { email: result.user.email } });
+            navigate("/home", { state: { email: result.user.email } });
         } catch (error) {
             setError(error.message);
         }
