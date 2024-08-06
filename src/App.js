@@ -9,6 +9,7 @@ import EditBooks from './components/EditBook';
 import AllBooks from './components/AllBooks';
 import Register from './components/Register';
 import Cart from './components/Cart';
+import CheckoutForm from './components/CheckoutForm';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/register" element={<Register/>} />          
             <Route path="/all-books" element={<AllBooks />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkoutform" element={<CheckoutForm />} />
           </Routes>
         </div>
       </Router>
