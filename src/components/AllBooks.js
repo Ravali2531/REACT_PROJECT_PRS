@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Card } from "flowbite-react";
 import { database } from '../firebase';
 import { ref, get } from 'firebase/database';
+import { Link } from 'react-router-dom';
+import cartIcon from '../assets/cart-icon.png';
+import { CartContext } from './CartContext';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/AllBooks.css';
-import cartIcon from '../assets/cart-icon.png'; 
-
 const AllBooks = () => {
   const [books, setBooks] = useState([]);
-  const [cart, setCart] = useState([]);
+  const { cart, setCart } = useContext(CartContext);
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -33,18 +35,27 @@ const AllBooks = () => {
   }, []);
 
   const addToCart = (book) => {
-    setCart([...cart, book]);
+    const bookInCart = cart.find(item => item.id === book.id);
+    if (bookInCart) {
+      setCart(prevCart =>
+        prevCart.map(item =>
+          item.id === book.id ? { ...item, quantity: item.quantity + 1 } : item
+        )
+      );
+    } else {
+      setCart(prevCart => [...prevCart, { ...book, quantity: 1 }]);
+    }
   };
 
   return (
-    <div className='mt-28 px-4 lg:px-24'>
-      <h2 className='text-5xl font-bold text-center'>All Books are here!</h2>
-      <div className='books-grid'>
-        {books.length > 0 && (
-          books.map((book) => (
-            <Card key={book.id} className="book-card">
-              <div className="relative">
-                <img src={book.imageurl} alt={book.booktitle} className='book-image' />
+    <div className="container mt-5">
+      <h2 className='text-center mb-4'>All Books are here!</h2>
+      <div className="row">
+        {books.length > 0 && books.map((book) => (
+          <div key={book.id} className="col-md-4 mb-4">
+            <Card className="book-card">
+              <div className="book-image-container position-relative">
+                <img src={book.imageurl} alt={book.booktitle} className='book-image img-fluid' />
                 <img
                   src={cartIcon}
                   alt="Add to cart"
@@ -52,18 +63,19 @@ const AllBooks = () => {
                   onClick={() => addToCart(book)}
                 />
               </div>
-              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                <p>{book.booktitle}</p>
-              </h5>
-              <p className="font-normal text-gray-700 dark:text-gray-400">
-                {book.bookdescription || "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."}
-              </p>
-              <p>$10.00</p>
-              <button className='add-button' onClick={() => addToCart(book)}>Add Now</button>
+              <h5 className="text-center mt-2">{book.booktitle}</h5>
+              <p className="text-center">{book.bookdescription || "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."}</p>
+              <p className="text-center">$10.00</p>
+              <button className='btn btn-primary w-100' onClick={() => addToCart(book)}>Add Now</button>
             </Card>
-          ))
-        )}
+          </div>
+        ))}
       </div>
+      {cart.length > 0 && (
+        <Link to="/cart" className="cart-nav-link position-fixed">
+          <img src={cartIcon} alt="Cart" className="cart-nav-icon" />
+        </Link>
+      )}
     </div>
   );
 };

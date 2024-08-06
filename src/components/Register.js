@@ -33,29 +33,34 @@ const Register = () => {
 
     return (
         <div className="container">
-            <h2>Register</h2>
-            <form className="form" onSubmit={handleRegister}>
-                <input
-                    type="email"
-                    placeholder="Email"
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <button type="submit">Register</button>
-            </form>
-            <div className="links">
-                Already have an account? Please <a href="#" onClick={() => navigate("/login")}>Login</a>
+            <div className="form-container">
+                <h2>Register</h2>
+                <form className="form" onSubmit={handleRegister}>
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
+                    <br />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                    <br />
+                    <button type="submit">Register</button>
+                    <br />
+                </form>
+                <div className="links">
+                    Already have an account? Please <a href="#" onClick={() => navigate("/login")}>Login</a>
+                </div>
+                <button className="google-btn" onClick={handleGoogleRegister}>
+                    <img src="https://t4.ftcdn.net/jpg/03/08/54/37/360_F_308543787_DmPo1IELtKY9hG8E8GlW8KHEsRC7JiDN.jpg" alt="Google logo" /> Login with Google
+                </button>
+                {error && <p className="error">{error}</p>}
             </div>
-            <button className="google-btn" onClick={handleGoogleRegister}>
-                <img src="https://t4.ftcdn.net/jpg/03/08/54/37/360_F_308543787_DmPo1IELtKY9hG8E8GlW8KHEsRC7JiDN.jpg" alt="Google logo" /> Login with Google
-            </button>
-            {error && <p className="error">{error}</p>}
         </div>
     );
 };
