@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { database } from '../firebase';
 import { ref, onValue, remove } from 'firebase/database';
 import '../css/ManageBooks.css';
+import Header from './Header';
+import MyFooter from './Footer';
 
 const ManageBooks = () => {
   const [allBooks, setAllBooks] = useState([]);
@@ -35,7 +37,7 @@ const ManageBooks = () => {
     };
   }, []);
 
-  //delete a book
+  // Delete a book
   const handleDelete = (id) => {
     const bookRef = ref(database, `books/${id}`);
     remove(bookRef)
@@ -63,10 +65,7 @@ const ManageBooks = () => {
                 <td>{book.authorname}</td>
                 <td>{book.category}</td>
                 <td>
-                  <Link
-                    to={`/edit-book/${book.id}`}
-                    className='edit-link'
-                  >
+                  <Link to={`/edit-book/${book.id}`} className='edit-link'>
                     Edit
                   </Link>
                   <button
@@ -94,20 +93,24 @@ const ManageBooks = () => {
   }
 
   return (
-    <div className='manage-books-container'>
-      <h2 className='title'>Manage your books</h2>
-      <table className='books-table'>
-        <thead>
-          <tr>
-            <th>No.</th>
-            <th>Book Name</th>
-            <th>Author Name</th>
-            <th>Category</th>
-            <th>Edit or Manage</th>
-          </tr>
-        </thead>
-        {booksTable}
-      </table>
+    <div className='page-wrapper'>
+      <Header />
+      <main className='manage-books-container'>
+        <h2 className='title'>Manage your books</h2>
+        <table className='books-table'>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Book Name</th>
+              <th>Author Name</th>
+              <th>Category</th>
+              <th>Edit or Manage</th>
+            </tr>
+          </thead>
+          {booksTable}
+        </table>
+      </main>
+      <MyFooter />
     </div>
   );
 };
