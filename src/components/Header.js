@@ -35,10 +35,9 @@ const Header = () => {
       </Link>
       <nav>
         <ul>
-          <li><Link to="/login">Login</Link></li>
-          <li><Link to="/upload-book">Upload Book</Link></li>            
-          <li><Link to="/manage-books">Manage Books</Link></li>            
-            <li><Link to="/shop">Shop</Link></li>
+          <li><Link to="/upload-book">Upload</Link></li>            
+          <li><Link to="/manage-books">Manage</Link></li>            
+            <li><Link to="/all-books">Explore</Link></li>
           {isLoggedIn ? (
             <>
               <li className="profile">
