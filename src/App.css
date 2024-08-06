@@ -1,13 +1,6 @@
 .App {
   text-align: center;
 }
-.form{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* height: 100vh; */
-}
 .login, .home{
   text-align: center;
 }
