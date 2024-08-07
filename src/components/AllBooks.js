@@ -53,14 +53,14 @@ const AllBooks = () => {
   return (
     <div className="page-wrapper">
       <Header />
-      <main className="container mt-5">
-        <h2 className='text-center mb-4'>All Books are here!</h2>
+      <main className="container mt-5 main-content">
+        <h2 className="text-center mb-4">All Books are here!</h2>
         <div className="row">
           {books.length > 0 && books.map((book) => (
-            <div key={book.id} className="col-md-4 mb-4">
+            <div key={book.id} className="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
               <Card className="book-card">
                 <div className="book-image-container position-relative">
-                  <img src={book.imageurl} alt={book.booktitle} className='book-image img-fluid' />
+                  <img src={book.imageurl} alt={book.booktitle} className="book-image img-fluid" />
                   <img
                     src={cartIcon}
                     alt="Add to cart"
@@ -69,15 +69,17 @@ const AllBooks = () => {
                   />
                 </div>
                 <h5 className="text-center mt-2">{book.booktitle}</h5>
-                <p className="text-center">{book.bookdescription || "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."}</p>
+                <p className="text-center">
+                  {book.bookdescription || "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."}
+                </p>
                 <p className="text-center">$10.00</p>
-                <button className='btn btn-primary w-100' onClick={() => addToCart(book)}>Add Now</button>
+                <button className="btn btn-primary w-100" onClick={() => addToCart(book)}>Add Now</button>
               </Card>
             </div>
           ))}
         </div>
         {cart.length > 0 && (
-          <Link to="/cart" className="cart-nav-link position-fixed">
+          <Link to="/cart" className="cart-nav-link">
             <img src={cartIcon} alt="Cart" className="cart-nav-icon" />
           </Link>
         )}
