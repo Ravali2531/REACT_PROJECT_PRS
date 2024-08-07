@@ -12,7 +12,7 @@ import MyFooter from './Footer';
 
 const AllBooks = () => {
   const [books, setBooks] = useState([]);
-  const { cart, setCart } = useContext(CartContext);
+  const { cart, updateCart } = useContext(CartContext);
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -40,13 +40,13 @@ const AllBooks = () => {
   const addToCart = (book) => {
     const bookInCart = cart.find(item => item.id === book.id);
     if (bookInCart) {
-      setCart(prevCart =>
-        prevCart.map(item =>
+      updateCart(
+        cart.map(item =>
           item.id === book.id ? { ...item, quantity: item.quantity + 1 } : item
         )
       );
     } else {
-      setCart(prevCart => [...prevCart, { ...book, quantity: 1 }]);
+      updateCart([...cart, { ...book, quantity: 1 }]);
     }
   };
 
