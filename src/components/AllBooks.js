@@ -12,6 +12,8 @@ import MyFooter from './Footer';
 
 const AllBooks = () => {
   const [books, setBooks] = useState([]);
+  const [totalQuantity, setTotalQuantity] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
   const { cart, updateCart } = useContext(CartContext);
 
   useEffect(() => {
@@ -36,6 +38,13 @@ const AllBooks = () => {
 
     fetchBooks();
   }, []);
+
+  useEffect(() => {
+    const quantity = cart.reduce((acc, item) => acc + item.quantity, 0);
+    const price = cart.reduce((acc, item) => acc + item.quantity * 10, 0); // Assuming each book costs $10
+    setTotalQuantity(quantity);
+    setTotalPrice(price);
+  }, [cart]);
 
   const addToCart = (book) => {
     const bookInCart = cart.find(item => item.id === book.id);
@@ -80,7 +89,11 @@ const AllBooks = () => {
         </div>
         {cart.length > 0 && (
           <Link to="/cart" className="cart-nav-link">
-            <img src={cartIcon} alt="Cart" className="cart-nav-icon" />
+            <div className="cart-summary">
+              <span className="cart-quantity">{totalQuantity}</span>
+              <img src={cartIcon} alt="Cart" className="cart-nav-icon" />
+              <span className="cart-price"><b>${totalPrice}</b></span>
+            </div>
           </Link>
         )}
       </main>
