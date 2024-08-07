@@ -7,6 +7,7 @@ import Shop from './shop';
 import { Footer } from 'flowbite-react';
 import FavBook from './FavBook';
 import SearchBar from './SearchBar';
+import '../css/Home.css';
 const Home = () => {
   return (
     <div>

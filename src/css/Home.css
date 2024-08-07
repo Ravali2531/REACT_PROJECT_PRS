@@ -2,7 +2,7 @@
     padding: 1rem;
     padding-left: 6rem;
     padding-right: 6rem;
-    background-color: #E6FFFA; /* bg-teal-100 */
+    background-color: #FFFFFF;
     display: flex;
     align-items: center;
   }
@@ -32,44 +32,33 @@
   }
   
   .banner-title {
-    font-size: 3rem; /* 5xl */
+    font-size: 3rem; 
     font-weight: bold;
     line-height: 1.2;
     color: black;
   }
   
   .highlight {
-    color: #1D4ED8; /* text-blue-700 */
+    color: #1D4ED8; 
   }
   
   .banner-description {
-    width: 80%;
+    width: 70%;
   }
   
   .banner-search {
     display: flex;
+    flex-direction: column;
   }
-  
+  .search-results{
+    display: block;
+  }
+ 
   .search-input {
     padding: 0.5rem;
     padding-left: 0.5rem;
-    border-radius: 0.125rem 0 0 0.125rem; /* rounded-s-sm */
+    border-radius: 5px;
     outline: none;
+    width: 60%;
+    
   }
-  
-  .search-button {
-    background-color: #1D4ED8; /* bg-blue-700 */
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    color: white;
-    font-weight: 500;
-    transition: background-color 0.2s ease-in;
-    cursor: pointer;
-  }
-  
-  .search-button:hover {
-    background-color: black;
-  }
-  
