@@ -18,14 +18,13 @@ const MyFooter = () => {
   };
 
   return (
-    <footer>
-      <Footer bgDark>
-        <div className="footer-container">
-          <div className="footer-content">
-            <Footer.Link href="#">About</Footer.Link>
-            <Footer.Link href="#">Privacy Policy</Footer.Link>
-            <Footer.Link href="#">Licensing</Footer.Link>
-            <Footer.Link href="#">Terms & Conditions</Footer.Link>
+    <Footer bgDark>
+      <div className="footer-container">
+        <div className="footer-content">
+          <Footer.Link href="/about">About</Footer.Link>
+          <Footer.Link href="/privacy-policy">Privacy Policy</Footer.Link>
+          <Footer.Link href="/licensing">Licensing</Footer.Link>
+          <Footer.Link href="/terms-and-conditions">Terms & Conditions</Footer.Link>
             <Footer.Link href="#" onClick={handleContactClick}>Contact Us</Footer.Link>
           </div>
           <div className="footer-bottom">
