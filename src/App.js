@@ -10,6 +10,10 @@ import AllBooks from './components/AllBooks';
 import Register from './components/Register';
 import Cart from './components/Cart';
 import CheckoutForm from './components/CheckoutForm';
+import About from './components/About';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import Licensing from './components/Licensing';
+import TermsAndConditions from './components/TermsAndConditions';
 
 function App() {
   return (
@@ -27,6 +31,10 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/home" element={<Home />} />
             <Route path="/checkoutform" element={<CheckoutForm />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />            
+            <Route path="/licensing" element={<Licensing />} />                      
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           </Routes>
         </div>
       </Router>
