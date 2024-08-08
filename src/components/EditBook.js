@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Label, Select, TextInput, Textarea } from "flowbite-react";
 import { database } from '../firebase';
 import { ref, update, get } from 'firebase/database';
-import './EditBook.css';
+import '../css/EditBook.css';
 
 const EditBook = () => {
   const { id } = useParams();

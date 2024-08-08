@@ -12,7 +12,6 @@ const SearchBar = () => {
         .then(response => response.json())
         .then(responseData => {
                 setSearchResults([]); // Reset search results each time new data is fetched
-                // console.log(responseData['-O0fmg1wySs3SCAfI26n'].booktitle);
                 let searchQuery = value.toLowerCase();
                 let filteredBooks = [];
                 for(const key in responseData) {
@@ -41,13 +40,17 @@ const SearchBar = () => {
                 onChange={(e) => setValue(e.target.value)} value={value}/>
                 {/* <button className='search-button'>Search</button> */}
                 <div className='search-results'>
-                    {searchResults.map((searchResult, index) => (
+                     {searchResults.length > 0 ? (
+                    searchResults.map((searchResult) => (
                         <Link key={searchResult.id} to={`/book/${searchResult.id}`}>
-                        <div className='search-entry'>
-                          {searchResult.title}
-                        </div>
-                      </Link>
-                    ))}
+                            <div className='search-entry'>
+                                {searchResult.title}
+                            </div>
+                        </Link>
+                    ))
+                ) : value.trim() !== '' ? (
+                    <div className='no-results'>No books found</div>
+                ) : null}
                 </div>
               </div>
     </div>
