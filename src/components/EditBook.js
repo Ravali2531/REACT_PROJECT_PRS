@@ -4,6 +4,8 @@ import { Label, Select, TextInput, Textarea } from "flowbite-react";
 import { database } from '../firebase';
 import { ref, update, get } from 'firebase/database';
 import '../css/EditBook.css';
+import MyFooter from './Footer';
+import Header from './Header';
 
 const EditBook = () => {
   const { id } = useParams();
@@ -72,8 +74,10 @@ const EditBook = () => {
   }
 
   return (
+    <div>
+    <Header />
     <div className='edit-book-container'>
-      <h2 className='title'>Update the book details</h2>
+      <h2 className='title'>Edit the book details</h2>
       <form onSubmit={handleUpdate} className="edit-book-form">
         <div className='form-row'>
           <div className='form-group'>
@@ -114,9 +118,11 @@ const EditBook = () => {
             defaultValue={bookData.bookpdfurl} />
         </div>
         <button type="submit" className='submit-button'>
-          Update Book
+          Update Details
         </button>
       </form>
+    </div>
+    <MyFooter />
     </div>
   );
 }
