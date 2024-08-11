@@ -67,8 +67,8 @@ const Header = () => {
           <li><Link to="/upload-book">Upload</Link></li>            
           <li><Link to="/manage-books">Manage</Link></li>            
           <li><Link to="/all-books">Explore</Link></li>
+          <li><button className="logout-button" onClick={logout}>Logout</button></li>
         </ul>
-        <button className="logout-button" onClick={logout}>Logout</button>
       </nav>
     </header>
   );

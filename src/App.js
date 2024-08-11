@@ -14,6 +14,7 @@ import About from './components/About';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import Licensing from './components/Licensing';
 import TermsAndConditions from './components/TermsAndConditions';
+import BookDetail from './components/BookDetail';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />            
             <Route path="/licensing" element={<Licensing />} />                      
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="/book/:id" element={<BookDetail />} />
           </Routes>
         </div>
       </Router>
