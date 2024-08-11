@@ -1,0 +1,35 @@
+/* TermsAndConditions.css */
+
+.terms-container {
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .terms-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1D4ED8;
+  }
+  
+  .terms-container h2 {
+    text-align: left;
+    margin-top: 20px;
+    color: #1D4ED8;
+  }
+  
+  .terms-container p {
+    margin-bottom: 20px;
+  }
+  
+  .terms-container ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .terms-container ul li {
+    margin-bottom: 10px;
+  }
+  

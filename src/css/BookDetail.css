@@ -1,0 +1,76 @@
+/* BookDetail.css */
+
+.book-detail-container {
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .book-image-container {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .book-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-details {
+    width: 100%;
+  }
+  
+  .book-title {
+    font-size: 2rem;
+    color: #007BFF; /* Adjust to your primary color */
+    margin-bottom: 20px;
+  }
+  
+  .book-author,
+  .book-category,
+  .book-description {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  /* Responsive Design */
+
+/* For tablets */
+@media (max-width: 768px) {
+    .book-detail-container {
+      padding: 15px;
+    }
+  
+    .book-title {
+      font-size: 1.8rem;
+    }
+  
+    .book-author,
+    .book-category,
+    .book-description {
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* For mobile phones */
+  @media (max-width: 480px) {
+    .book-detail-container {
+      padding: 10px;
+    }
+  
+    .book-title {
+      font-size: 1.5rem;
+    }
+  
+    .book-author,
+    .book-genre,
+    .book-published,
+    .book-description {
+      font-size: 0.9rem;
+    }
+  }
