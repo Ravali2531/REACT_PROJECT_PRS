@@ -16,7 +16,7 @@ const Register = () => {
         e.preventDefault();
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            navigate("/", { state: { email: userCredential.user.email } });
+            navigate("/home", { state: { email: userCredential.user.email } });
         } catch (error) {
             setError(error.message);
         }
@@ -25,13 +25,13 @@ const Register = () => {
     const handleGoogleRegister = async () => {
         try {
             const result = await signInWithPopup(auth, googleProvider);
-            navigate("/", { state: { email: result.user.email } });
+            navigate("/home", { state: { email: result.user.email } });
         } catch (error) {
             setError(error.message);
         }
     };
-
     return (
+        <div className='register-page'>
         <div className="container">
             <div className="form-container">
                 <h2>Register</h2>
@@ -50,7 +50,7 @@ const Register = () => {
                         required
                     />
                     <br />
-                    <button type="submit">Register</button>
+                    <button className='register-btn' type="submit">Register</button>
                     <br />
                 </form>
                 <div className="links">
@@ -61,6 +61,7 @@ const Register = () => {
                 </button>
                 {error && <p className="error">{error}</p>}
             </div>
+        </div>
         </div>
     );
 };

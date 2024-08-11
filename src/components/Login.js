@@ -45,7 +45,8 @@ const Login = () => {
     };
 
     return (
-        <div className="container">
+        <div className='login-page'>
+            <div className="container">
             <div className="form-container">
                 <h2>Login</h2>
                 <form className="form" onSubmit={handleSignin}>
@@ -65,10 +66,10 @@ const Login = () => {
                         required
                     />
                     <br />
-                    <button type="submit">Login</button>
+                    <button className="login-btn" type="submit">Login</button>
                 </form>
                 <br />
-                <button onClick={handleForgotPassword}>Forgot Password?</button>
+                <button className="forgetPswd" onClick={handleForgotPassword}>Forgot Password?</button>
                 <br />
                 <div className="links">
                     Don't have an account? Please <a href="#" onClick={() => navigate("/register")}>Register</a> here.
@@ -78,6 +79,7 @@ const Login = () => {
                 </button>
                 {error && <div className="error">{error}</div>}
             </div>
+        </div>
         </div>
     );
 };

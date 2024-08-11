@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CartContext } from './CartContext';
 import '../css/Cart.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Cart = () => {
   const { cart, updateCart } = useContext(CartContext);
-
-  const totalPrice = cart.reduce((acc, book) => acc + book.quantity * 10, 0); // Assuming each book costs $10
+  const navigate = useNavigate();
+  const totalPrice = cart.reduce((acc, book) => acc + book.quantity * 10, 0); 
 
   const handleQuantityChange = (bookId, newQuantity) => {
     if (newQuantity <= 0) return;
@@ -23,7 +23,7 @@ const Cart = () => {
   };
 
   const handleCheckout = async () => {
-    alert('Checkout functionality to be implemented.');
+    navigate('/checkoutform');
   };
 
   return (
