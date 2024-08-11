@@ -4,10 +4,12 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
+  /* background-color: #f5f5f5; */
+  border: 1px solid black;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem; 
+  margin-bottom: 1rem; 
 }
 
 .title {
@@ -26,7 +28,7 @@
 .books-table td {
   padding: 12px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd; */
 }
 
 .books-table th {
@@ -34,16 +36,16 @@
 }
 
 .books-table tbody tr:nth-child(even) {
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
 }
 
 .books-table tbody tr:hover {
-  background-color: #f0f0f0;
+  background-color: #fafafa;
 }
 
 .edit-link {
   display: inline-block;
-  color: #007bff;
+  color: #1D4ED8;
   text-decoration: none;
   cursor: pointer;
   margin-right: 10px;
@@ -51,7 +53,7 @@
 }
 
 .edit-link:hover {
-  color: #0056b3; /* Darker shade for hover */
+  text-decoration: underline;
 }
 
 .delete-button {
