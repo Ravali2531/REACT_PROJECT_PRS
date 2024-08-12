@@ -1,8 +1,11 @@
 import React, { useState, useContext } from 'react';
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { CardElement, useStripe, useElements, Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from './CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+const stripePromise = loadStripe('pk_test_51PlVh8P9Bz7XrwZPnWMN2upZk3x00s3soZgJgM5QTMuwCNoZPBdGtmPRXB29vBnFvOXjEAv2vntLuQaWbPpEHOmP00D7pelv0B');
 
 const CheckoutForm = () => {
   const stripe = useStripe();
@@ -61,20 +64,27 @@ const CheckoutForm = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setBillingDetails((prevDetails) => ({
-      ...prevDetails,
-      [name.includes('address') ? 'address' : name]: {
-        ...prevDetails[name.includes('address') ? 'address' : name],
+    if (name in billingDetails.address) {
+      setBillingDetails((prevDetails) => ({
+        ...prevDetails,
+        address: {
+          ...prevDetails.address,
+          [name]: value,
+        },
+      }));
+    } else {
+      setBillingDetails((prevDetails) => ({
+        ...prevDetails,
         [name]: value,
-      },
-    }));
+      }));
+    }
   };
 
   return (
     <div className="container mt-5">
       <h2 className="text-center mb-4">Checkout</h2>
       <div className="row">
-        <div className="col-md-6 mb-4">
+        <div className="col-md-6 mb-4 order-summary">
           <h4>Order Summary</h4>
           <ul className="list-group mb-3">
             {cart.map((book) => (
@@ -92,7 +102,7 @@ const CheckoutForm = () => {
             </li>
           </ul>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 billing-details">
           <h4>Billing Details</h4>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
@@ -194,4 +204,12 @@ const CheckoutForm = () => {
   );
 };
 
-export default CheckoutForm;
+const YourComponent = () => {
+  return (
+    <Elements stripe={stripePromise}>
+      <CheckoutForm />
+    </Elements>
+  );
+};
+
+export default YourComponent;
