@@ -3,11 +3,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { CartContext } from './CartContext';
 import '../css/Cart.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './Header';
+import MyFooter from './Footer';
 
 const Cart = () => {
   const { cart, updateCart } = useContext(CartContext);
   const navigate = useNavigate();
-  const totalPrice = cart.reduce((acc, book) => acc + book.quantity * 10, 0); 
+  const totalPrice = cart.reduce((acc, book) => acc + book.quantity * 10, 0);
 
   const handleQuantityChange = (bookId, newQuantity) => {
     if (newQuantity <= 0) return;
@@ -22,16 +24,20 @@ const Cart = () => {
     updateCart(cart.filter(item => item.id !== bookId));
   };
 
+  const clearCart = () => {
+    updateCart([]);
+  };
+
   const handleCheckout = async () => {
     navigate('/checkoutform');
   };
 
   return (
-    <div className="container mt-5">
+    <div className="page-wrapper">
+      <Header />
+      <main className="container mt-5">
       <h2 className='text-center mb-4'>Your Cart</h2>
-      <Link to="/all-books" className='d-block text-center mb-4 text-primary'>
-        Back to Books
-      </Link>
+        <Link to="/all-books" className='d-block text-center mb-4 text-primary'>  Back to Books </Link>
       {cart.length === 0 ? (
         <p className='text-center'>Your cart is empty.</p>
       ) : (
@@ -56,10 +62,13 @@ const Cart = () => {
             <h3>Total Price: ${totalPrice.toFixed(2)}</h3>
           </div>
           <div className="text-center mt-4">
-            <button className="btn btn-primary" onClick={handleCheckout}>Checkout</button>
+            <button className="btn btn-primary me-2" onClick={handleCheckout}>Checkout</button>
+            <button className="btn btn-danger ms-2" onClick={clearCart}>Clear Cart</button>
           </div>
         </div>
       )}
+    </main>
+      <MyFooter />
     </div>
   );
 };
