@@ -37,13 +37,13 @@ const BookDetail = () => {
 
   useEffect(() => {
     const quantity = cart.reduce((acc, item) => acc + item.quantity, 0);
-    const price = cart.reduce((acc, item) => acc + item.quantity * item.price, 0);
+    const price = cart.reduce((acc, item) => acc + item.quantity * 10, 0); // Assuming each book costs $10
     setTotalQuantity(quantity);
     setTotalPrice(price);
   }, [cart]);
 
+
   const addToCart = (book) => {
-    const bookPrice = 10; // Assume each book costs $10
     const bookInCart = cart.find(item => item.id === book.id);
 
     if (bookInCart) {
@@ -53,7 +53,7 @@ const BookDetail = () => {
         )
       );
     } else {
-      updateCart([...cart, { ...book, quantity: 1, price: bookPrice }]);
+      updateCart([...cart, { ...book, quantity: 1 }]);
     }
   };
 
@@ -66,8 +66,8 @@ const BookDetail = () => {
       <Header />
       <div className="book-detail-container">
         {book.imageurl && (
-          <div className="book-image-container">
-            <img src={book.imageurl} alt={book.booktitle} className="book-image" />
+          <div className="book-img-container">
+            <img src={book.imageurl} alt={book.booktitle} className="book-img" />
           </div>
         )}
         <div className="book-details">
@@ -85,7 +85,7 @@ const BookDetail = () => {
           <div className="cart-summary">
             <span className="cart-quantity">{totalQuantity}</span>
             <img src={cartIcon} alt="Cart" className="cart-nav-icon" />
-            <span className="cart-price"><b>${totalPrice.toFixed(2)}</b></span>
+            <span className="cart-price"><b>${totalPrice}</b></span>
           </div>
         </Link>
       )}
