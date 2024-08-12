@@ -10,13 +10,13 @@
   flex-wrap: wrap;
 }
 
-.book-image-container {
+.book-img-container {
   flex: 1;
   max-width: 300px;
   margin-right: 20px;
 }
 
-.book-image {
+.book-img {
   width: 100%;
   height: auto;
   border-radius: 8px;
@@ -67,7 +67,7 @@
     padding: 15px;
   }
 
-  .book-image-container {
+  .book-img-container {
     margin-right: 0;
     margin-bottom: 20px;
   }

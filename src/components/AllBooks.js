@@ -67,20 +67,25 @@ const AllBooks = () => {
         <div className="row">
           {books.length > 0 && books.map((book) => (
             <div key={book.id} className="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-              <Card className="book-card">
-                <div className="book-image-container position-relative">
-                  <img src={book.imageurl} alt={book.booktitle} className="book-image img-fluid" />
-                  <img
-                    src={cartIcon}
-                    alt="Add to cart"
-                    className="cart-icon"
-                    onClick={() => addToCart(book)}
-                  />
-                </div>
-                <h5 className="text-center mt-2">{book.booktitle}</h5>
-                <p className="text-center">$10.00</p>
-                <button className="btn btn-primary w-100" onClick={() => addToCart(book)}>Add Now</button>
-              </Card>
+              <Link to={`/book/${book.id}`}>
+                <Card className="book-card">
+                  <div className="book-image-container position-relative">
+                    <img src={book.imageurl} alt={book.booktitle} className="book-image img-fluid" />
+                    <img
+                      src={cartIcon}
+                      alt="Add to cart"
+                      className="cart-icon"
+                      onClick={(e) => {
+                        e.preventDefault(); // Prevent navigation when clicking on the cart icon
+                        addToCart(book);
+                      }}
+                    />
+                  </div>
+                  <h5 className="text-center mt-2">{book.booktitle}</h5>
+                  <p className="text-center">$10.00</p>
+                  <button className="btn btn-primary w-100" onClick={() => addToCart(book)}>Add Now</button>
+                </Card>
+              </Link>
             </div>
           ))}
         </div>
