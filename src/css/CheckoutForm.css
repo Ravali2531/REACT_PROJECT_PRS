@@ -1,0 +1,135 @@
+/* General Styles */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    color: #111;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+  
+  /* Order Summary */
+  .order-summary h4 {
+    color: #007600;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .order-summary .list-group-item {
+    border: none;
+    padding: 15px 0;
+    font-size: 16px;
+  }
+  
+  .order-summary .text-muted {
+    color: #555;
+  }
+  
+  .order-summary .list-group-item:last-child {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+  }
+  
+  .order-summary .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .order-summary .list-group-item h6 {
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  
+  .order-summary .list-group-item small {
+    color: #888;
+  }
+  
+  .order-summary .list-group-item strong {
+    font-weight: 600;
+    color: #000;
+  }
+  
+  /* Billing Details */
+  .billing-details h4 {
+    color: #007600;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .form-control {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .form-control:focus {
+    border-color: #007600;
+    box-shadow: 0 0 0 0.2rem rgba(0, 118, 0, 0.25);
+  }
+  
+  /* Card Element */
+  #cardElement {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fafafa;
+    margin-bottom: 20px;
+  }
+  
+  #cardElement.StripeElement--focus {
+    border-color: #007600;
+    box-shadow: 0 0 0 0.2rem rgba(0, 118, 0, 0.25);
+  }
+  
+  #cardElement.StripeElement--invalid {
+    border-color: #dc3545;
+  }
+  
+  #cardElement.StripeElement--complete {
+    border-color: #28a745;
+  }
+  
+  /* Button */
+  .btn-primary {
+    background-color: #f0c14b;
+    border-color: #a88734 #9c7e31 #846a29;
+    font-weight: bold;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #111;
+    transition: background-color 0.2s ease;
+    margin-top: 20px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ddb347;
+    border-color: #a88734 #9c7e31 #846a29;
+  }
+  
+  .btn-primary:disabled {
+    background-color: #ddd;
+    border-color: #bbb;
+    color: #888;
+  }
+  
+  /* Additional Spacing */
+  .mb-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  

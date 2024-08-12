@@ -32,11 +32,6 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/home" element={<Home />} />
             <Route path="/checkoutform" element={<CheckoutForm />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />            
-            <Route path="/licensing" element={<Licensing />} />                      
-            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-            <Route path="/book/:id" element={<BookDetail />} />
           </Routes>
         </div>
       </Router>
