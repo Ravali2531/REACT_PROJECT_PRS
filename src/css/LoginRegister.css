@@ -1,24 +1,55 @@
-.container {
+.lrcontainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #fff;
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
+  margin-top: 3rem; 
   transition: transform 0.2s;
 }
 
-.container:hover {
+.lrcontainer:hover {
   transform: scale(1.02);
 }
 
-h1,h2 {
+.register-page, .login-page {
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  min-height: 100vh; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.register-page {
+  background-image: url('https://dpdajlq3ew794.cloudfront.net/20190925093636/montreal-bookstore.jpg?format=auto&width=1200');
+}
+
+.login-page {
+  background-image: url('https://static01.nyt.com/images/2017/05/11/t-magazine/bookstore-slide-2MCD/bookstore-slide-2MCD-superJumbo.jpg?quality=75&auto=webp');
+}
+
+.register-page .lrcontainer,
+.login-page .lrcontainer {
+  z-index: 1; 
+  background: rgba(255, 255, 255, 0.8); 
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+h1, h2 {
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
-  color: #333;
+  color:black;
   text-align: center;
 }
 
@@ -38,15 +69,15 @@ input {
 }
 
 input:focus {
-  border-color: #007bff;
+  border-color:  #1D4ED8;
 }
 
-button {
-  padding: 12px;
+.google-btn,.forgetPswd,.login-btn,.register-btn {
+  padding: 12px;                                                                     
   margin-top: 12px;
   border: none;
   border-radius: 6px;
-  background-color: #007bff;
+  background-color: #1D4ED8;
   color: white;
   font-size: 1rem;
   cursor: pointer;
@@ -54,16 +85,25 @@ button {
   align-items: center;
 }
 
-button:hover {
+.google-btn,.forgetPswd, .register-btn,.login-btn:hover {
   background-color: #0056b3;
   transform: scale(1.02);
 }
 
-button:focus {
+.google-btn,.forgetPswd,.register-btn,.login-btn:focus {
   outline: none;
 }
-
-p.error {
+.forgetPswd{
+  background-color:  #1D4ED8;
+  margin-left: 70px;
+}
+.register-btn{
+  background-color:  #1D4ED8;
+}
+.forgetPswd,.register-btn:hover{
+  background-color:  #0056b3;
+}
+.error {
   color: red;
   text-align: center;
   font-weight: bold;
@@ -71,29 +111,28 @@ p.error {
 }
 
 .google-btn {
-  background-color: white;  
-  color: black;             
-  font-size: 16px;          
-  font-weight: 500;         
-  padding: 10px 24px;   
-  margin-right: 50px;    
-  margin-top: 20px;         
+  background-color: rgba(255, 255, 255, 0.201);
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 24px;
+  margin-top: 20px;
   cursor: pointer;
-  display: flex;            
-  align-items: center;      
-  text-align: center;
-  justify-content: center;  
-  transition: background-color 0.3s, border-color 0.3s; 
-  text-transform: none;    
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  transition: background-color 0.3s, border-color 0.3s;
+  text-transform: none;
+  width: 80%; 
 }
 
 .google-btn img {
-  margin-right: 10px;       
-  vertical-align: middle;   
-  height: 20px;             
+  margin-right: 10px;
+  vertical-align: middle;
+  height: 20px;
 }
 
 .google-btn:hover {
-  background-color: #f6f7f9; 
+  background-color: #c7c7c775;
 }
 

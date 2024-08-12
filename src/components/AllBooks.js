@@ -78,9 +78,6 @@ const AllBooks = () => {
                   />
                 </div>
                 <h5 className="text-center mt-2">{book.booktitle}</h5>
-                <p className="text-center">
-                  {book.bookdescription || "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."}
-                </p>
                 <p className="text-center">$10.00</p>
                 <button className="btn btn-primary w-100" onClick={() => addToCart(book)}>Add Now</button>
               </Card>
