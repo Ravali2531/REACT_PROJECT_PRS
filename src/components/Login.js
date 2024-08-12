@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '../firebase';
-//import '../css/LoginRegister.css';
+import '../css/LoginRegister.css';
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -45,7 +45,8 @@ const Login = () => {
     };
 
     return (
-        <div className="container">
+        <div className='login-page'>
+            <div className="lrcontainer">
             <div className="form-container">
                 <h2>Login</h2>
                 <form className="form" onSubmit={handleSignin}>
@@ -56,7 +57,6 @@ const Login = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                    <br />
                     <input
                         type="password"
                         placeholder="Password"
@@ -64,12 +64,9 @@ const Login = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                    <br />
-                    <button type="submit">Login</button>
+                    <button className="login-btn" type="submit">Login</button>
                 </form>
-                <br />
-                <button onClick={handleForgotPassword}>Forgot Password?</button>
-                <br />
+                <button className="forgetPswd" onClick={handleForgotPassword}>Forgot Password?</button>
                 <div className="links">
                     Don't have an account? Please <a href="#" onClick={() => navigate("/register")}>Register</a> here.
                 </div>
@@ -78,6 +75,7 @@ const Login = () => {
                 </button>
                 {error && <div className="error">{error}</div>}
             </div>
+        </div>
         </div>
     );
 };
