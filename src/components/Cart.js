@@ -33,41 +33,41 @@ const Cart = () => {
   };
 
   return (
-    <div className="page-wrapper">
-      <Header />
-      <main className="container mt-5">
-      <h2 className='text-center mb-4'>Your Cart</h2>
-        <Link to="/all-books" className='d-block text-center mb-4 text-primary'>  Back to Books </Link>
-      {cart.length === 0 ? (
-        <p className='text-center'>Your cart is empty.</p>
-      ) : (
-        <div className="cart-items">
+    <div className="page-container">
+      <div className="main-content">
+          <Header />
+          <main className="container mt-5 ">
+          <h2 className='text-center mb-4'>Your Cart</h2>
+          {cart.length === 0 ? (
+          <p className='text-center'>Your cart is empty.</p>
+          ) : (
+          <div className="cart-items">
           {cart.map((book) => (
-            <div key={book.id} className="cart-item d-flex align-items-center mb-3">
-              <img src={book.imageurl} alt={book.booktitle} className="cart-item-image img-fluid me-3" />
-              <div className="cart-item-details flex-grow-1">
-                <h3>{book.booktitle}</h3>
-                <p>{book.bookdescription}</p>
-                <p>${(book.quantity * 10).toFixed(2)}</p>
-                <div className="d-flex align-items-center">
-                  <button className="btn btn-outline-secondary me-2" onClick={() => handleQuantityChange(book.id, book.quantity - 1)} disabled={book.quantity <= 1}>-</button>
-                  <span>{book.quantity}</span>
-                  <button className="btn btn-outline-secondary ms-2" onClick={() => handleQuantityChange(book.id, book.quantity + 1)}>+</button>
-                </div>
-                <button className="btn btn-danger mt-2" onClick={() => removeFromCart(book.id)}>Remove</button>
+          <div key={book.id} className="cart-item d-flex align-items-center mb-3">
+            <img src={book.imageurl} alt={book.booktitle} className="cart-item-image img-fluid me-3" />
+            <div className="cart-item-details flex-grow-1 ml-30">
+              <p className='book-title-cart'>{book.booktitle}</p>
+              <p>${(book.quantity * 10).toFixed(2)}</p>
+              <div className="d-flex align-items-center">
+                <button className="btn btn-outline-secondary me-2" onClick={() => handleQuantityChange(book.id, book.quantity - 1)} disabled={book.quantity <= 1}>-</button>
+                <span>{book.quantity}</span>
+                <button className="btn btn-outline-secondary ms-2" onClick={() => handleQuantityChange(book.id, book.quantity + 1)}>+</button>
               </div>
+              <button className="btn btn-danger mt-2" onClick={() => removeFromCart(book.id)}>Remove</button>
             </div>
-          ))}
-          <div className="cart-total mt-4 text-center">
-            <h3>Total Price: ${totalPrice.toFixed(2)}</h3>
           </div>
-          <div className="text-center mt-4">
-            <button className="btn btn-primary me-2" onClick={handleCheckout}>Checkout</button>
-            <button className="btn btn-danger ms-2" onClick={clearCart}>Clear Cart</button>
-          </div>
+        ))}
+        <div className="cart-total mt-4 text-center">
+          <h3>Total Price: ${totalPrice.toFixed(2)}</h3>
         </div>
-      )}
-    </main>
+        <div className="text-center mt-4">
+          <button className="btn btn-primary me-2 mb-5" onClick={handleCheckout}>Checkout</button>
+          <button className="btn btn-danger ms-2 mb-5" onClick={clearCart}>Clear Cart</button>
+        </div>
+        </div>
+        )}
+        </main>
+      </div>
       <MyFooter />
     </div>
   );
