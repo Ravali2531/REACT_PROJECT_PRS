@@ -12,13 +12,8 @@
   margin: 0 auto;
   transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
-.book-card a {
-  text-decoration: none;
-  color: inherit;
-}
 
-.book-card a:hover h5,
-.book-card a:hover p {
+.book-card a {
   text-decoration: none;
   color: inherit;
 }
@@ -32,7 +27,6 @@
   color: #555;
 }
 
-
 .book-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -41,13 +35,23 @@
 
 .book-image-container {
   width: 100%;
-  height: auto;
+  height: 300px;
   position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(228, 249, 249);
+  margin: 0;
+  padding: 0;
 }
 
 .book-image {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0;
 }
 
 .cart-icon {
@@ -66,13 +70,13 @@
 
 /* Cart icon positioning */
 .main-content {
-  position: relative; /* Ensure main content is positioned relative */
+  position: relative;
 }
 
 .main-content .cart-nav-link {
   position: absolute;
-  top: 10px; /* Adjust top position as needed */
-  right: 10px; /* Adjust right position as needed */
+  top: -18px;
+  right: 5px;
 }
 
 /* Cart icon styling */
@@ -105,4 +109,35 @@
   font-size: 14px;
   color: #333;
   font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .book-image-container {
+    height: 250px;
+  }
+
+  .book-card {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-image-container {
+    height: 200px;
+  }
+
+  .cart-nav-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .cart-quantity {
+    padding: 3px 6px;
+    font-size: 10px;
+  }
+
+  .cart-price {
+    font-size: 12px;
+  }
 }

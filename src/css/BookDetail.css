@@ -49,7 +49,7 @@
 .add-now-button {
   margin-top: 20px;
   margin-left: 50px;
-  padding: 10px 20px;
+  padding: 10px 150px;
   font-size: 1rem;
   background-color: #1D4ED8; /* Adjust to your preferred color */
   color: #fff;
@@ -57,7 +57,12 @@
   border-radius: 5px;
   cursor: pointer;
 }
-
+.bd-cart-nav-link {
+  position: absolute;
+  top: 15px; /* Move a little further down from the top */
+  right: 30px; /* Move a little further from the right */
+  /* left: 0    px; */
+}
 /* Responsive Design */
 
 /* For tablets */
