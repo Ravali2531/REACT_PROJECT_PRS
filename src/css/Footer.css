@@ -3,7 +3,6 @@
   padding: 0em 0.5em;
   background-color: rgb(228, 249, 249); 
   color: black; 
-  
 }
 
 .footer-content {
@@ -63,4 +62,23 @@
   .social-icons {
     justify-content: center; 
   }
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+
+.main-content {
+  flex: 1; 
 }
