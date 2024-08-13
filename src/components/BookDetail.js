@@ -64,6 +64,7 @@ const BookDetail = () => {
   return (
     <div>
       <Header />
+      <main className="main-content">
       <div className="book-detail-container">
         {book.imageurl && (
           <div className="book-img-container">
@@ -81,7 +82,7 @@ const BookDetail = () => {
         </div>
       </div>
       {cart.length > 0 && (
-        <Link to="/cart" className="cart-nav-link">
+        <Link to="/cart" className="bd-cart-nav-link">
           <div className="cart-summary">
             <span className="cart-quantity">{totalQuantity}</span>
             <img src={cartIcon} alt="Cart" className="cart-nav-icon" />
@@ -89,6 +90,7 @@ const BookDetail = () => {
           </div>
         </Link>
       )}
+      </main>
       <MyFooter />
     </div>
   );
