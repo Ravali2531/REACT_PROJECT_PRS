@@ -16,7 +16,7 @@ const Register = () => {
         e.preventDefault();
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            navigate("/", { state: { email: userCredential.user.email } });
+            navigate("/home", { state: { email: userCredential.user.email } });
         } catch (error) {
             setError(error.message);
         }
@@ -25,14 +25,14 @@ const Register = () => {
     const handleGoogleRegister = async () => {
         try {
             const result = await signInWithPopup(auth, googleProvider);
-            navigate("/", { state: { email: result.user.email } });
+            navigate("/home", { state: { email: result.user.email } });
         } catch (error) {
             setError(error.message);
         }
     };
-
     return (
-        <div className="container">
+        <div className='register-page'>
+        <div className="lrcontainer">
             <div className="form-container">
                 <h2>Register</h2>
                 <form className="form" onSubmit={handleRegister}>
@@ -42,16 +42,13 @@ const Register = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                    <br />
                     <input
                         type="password"
                         placeholder="Password"
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                    <br />
-                    <button type="submit">Register</button>
-                    <br />
+                    <button className='register-btn' type="submit">Register</button>
                 </form>
                 <div className="links">
                     Already have an account? Please <a href="#" onClick={() => navigate("/login")}>Login</a>
@@ -61,6 +58,7 @@ const Register = () => {
                 </button>
                 {error && <p className="error">{error}</p>}
             </div>
+        </div>
         </div>
     );
 };

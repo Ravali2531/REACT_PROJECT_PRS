@@ -1,5 +1,5 @@
 const express = require('express');
-const stripe = require('stripe')('sk_test_51Phhd2IBJqmyhxccuql9gK3ReHR7eaKVJo6QEZP05vIzaKaFpBvtWohMcOhHSvVuOYBTsHEKlRfGb6y0JHMF39yr005F3coRgb');
+const stripe = require('stripe')('sk_test_51PlVh8P9Bz7XrwZPWSkDzX7AmaNgVr04yPOQWnbAECiYSWKtsmmVgD2Z8JYBY8a5dmEfKXaTewrBESb3fxIliwDo00HdJmKBKz');
 const cors = require('cors');
 const app = express();
 
@@ -12,7 +12,7 @@ app.post('/create-payment-intent', async (req, res) => {
   try {
     const paymentIntent = await stripe.paymentIntents.create({
       amount,
-      currency: 'usd',
+      currency: 'cad',
       payment_method_types: ['card'],
     });
 
