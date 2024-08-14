@@ -103,8 +103,10 @@ const AllBooks = () => {
                     }}
                   />
                 </div>
-                <h5 className="text-center mt-2">{book.booktitle}</h5>
-                <p className="text-center">$10.00</p>
+                <Link to={`/book/${book.id}`}>
+                  <h5 className="text-center mt-2">{book.booktitle}</h5>
+                  <p className="text-center">$10.00</p>
+                </Link>
                 <button
                   className="btn btn-primary w-100"
                   onClick={(e) => {
