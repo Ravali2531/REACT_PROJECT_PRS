@@ -114,6 +114,12 @@ input:focus {
   margin-top: 10px;
 }
 
+.success {
+  color: green;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
 .google-btn {
   background-color: rgba(255, 255, 255, 0.201);
   color: black;
